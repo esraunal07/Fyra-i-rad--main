@@ -1,0 +1,15 @@
+iframe {
+  width: 50vw;
+  height: 100vh;
+  position: fixed;
+}
+
+iframe#playerRed {
+  top: 0;
+  left: 0;
+}
+
+iframe#playerYellow {
+  top: 0;
+  left: 50vw;
+}

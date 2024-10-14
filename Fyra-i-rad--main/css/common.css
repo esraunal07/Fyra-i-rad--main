@@ -1,0 +1,77 @@
+@import 'button.css';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Inter', 'black italic';
+  font-size: max(4vw, 3vh);
+  text-align: center;
+  margin-top: -8vh;
+  margin-bottom: min(-1vw, -1.5vh);
+}
+
+p {
+  font-family: 'Bebas Neue';
+  font-size: max(2vw, 3vh);
+  margin-top: 4vh;
+  margin-bottom: 0.5vw;
+  text-align: center;
+}
+
+.player-name{
+font-family: 'Bebas Neue';
+  font-size: max(2vw, 3vh);
+  margin-top: 4vh;
+  margin-bottom: 0.5vw;
+  text-align: center;
+}
+
+.player-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.circle-container {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: inherit;
+}
+
+
+.color-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.buttons {
+  height: 56px;
+  margin-top: max(3vw, 5vh);
+  text-align: center;
+}
+
+.buttons .button:not(.button:nth-child(1)) {
+  margin-left: 40px;
+}
+
+/* hide all buttons except the ones in the dialog if the dialog is open*/
+body[dialogOpen="true"] .buttons:not(dialog .buttons) * {
+  display: none;
+}

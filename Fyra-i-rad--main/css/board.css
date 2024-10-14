@@ -1,0 +1,91 @@
+.board {
+  display: grid;
+  grid-template-columns: repeat(7, 50px);
+  grid-template-rows: repeat(6, 50px);
+  gap: 5px;
+  background-color: #006BDF;
+  padding: 10px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin: 40px 0 auto;
+}
+
+.title {
+  font-size: 40px;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.red-text {
+  color: #F21E1E !important;
+}
+
+.yellow-text {
+  color: #FFC700 !important;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #54BAE5;
+  cursor: pointer;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.cell.red {
+  background-color: #F21E1E;
+}
+
+.cell.yellow {
+  background-color: #FFFF00;
+}
+
+.cell.empty {
+  background-color: #54BAE5;
+}
+
+
+body.notMyTurn .cell {
+  cursor: default !important;
+}
+
+body.notMyTurn .cell:hover::before {
+  content: '' !important;
+}
+
+
+@keyframes blink {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+}
+
+/* .cell.winning-cell {
+  animation: blink 1s infinite;
+} */
+
+.cell.winning-cell {
+  animation: blink 1s ease-in-out infinite;
+}
+
+.cell.winning-cell.red .circle {
+  background-color: rgba(242, 30, 30, 0.8);
+}
+
+.cell.winning-cell.yellow .circle {
+  background-color: rgba(255, 199, 0, 0.8);
+}

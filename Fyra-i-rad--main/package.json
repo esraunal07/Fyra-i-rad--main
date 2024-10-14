@@ -1,0 +1,38 @@
+{
+  "name": "fyra-i-rad",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "test": "vitest",
+    "test-cypress": "cypress run --browser chrome",
+    "test-cypress-ui": "cypress open --browser chrome",
+    "test-cypress-ui-edge": "cypress open --browser edge",
+    "test-cypress-edge": "cypress run --browser edge",
+    "make-steps": "node _auto-generate-step-definitions.cjs",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "12.2",
+    "@cypress/webpack-preprocessor": "5.12",
+    "@vitest/ui": "^2.1.1",
+    "cypress": "10.7",
+    "happy-dom": "^15.7.3",
+    "vite": "^5.4.1",
+    "vitest": "^2.1.1"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "cypress-cucumber-preprocessor": {
+    "json": {
+      "enabled": true
+    },
+    "stepDefinitions": [
+      "/specs/step_definitions/**/*.js"
+    ]
+  }
+}
